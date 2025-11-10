@@ -5,8 +5,8 @@
 Note: **GitHub Profile/name be must your full name or family name for grading** 
 1. [Joshua R. Balista](https://github.com/jbqtie)
 2. [Eros Dagbay](https://github.com/ErosDagbay)
-3. [Juan Dela Cruz](https://github.com/sadmann7)
-4. [Jose Antonio Luna](https://github.com/JamesNK)
+3. [Cholo Diel](https://github.com/CholoDiel)
+4. [Raphael Sedayon](https://github.com/Raphael-XU)
 
 ### Milestone 1 (Nov Week 1): Project Proposal & Introduction
 
