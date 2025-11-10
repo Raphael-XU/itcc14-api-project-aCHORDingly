@@ -3,8 +3,8 @@
 *Lists all your Members here and link their GitHub Profile* 
 <br/>
 Note: **GitHub Profile/name be must your full name or family name for grading** 
-1. [Jose Rizal](https://github.com/jrizal)
-2. [Juan Luna](https://github.com/Juanluna10)
+1. [Joshua R. Balista](https://github.com/jbqtie)
+2. [Eros Dagbay](https://github.com/ErosDagbay)
 3. [Juan Dela Cruz](https://github.com/sadmann7)
 4. [Jose Antonio Luna](https://github.com/JamesNK)
 
