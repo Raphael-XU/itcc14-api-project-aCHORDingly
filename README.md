@@ -11,99 +11,94 @@ Note: **GitHub Profile/name be must your full name or family name for grading**
 ### Milestone 1 (Nov Week 1): Project Proposal & Introduction
 
 - **What we'll do:**
-  - Finalize our project topic, define our core problem, and outline our data models (Users, Items).
-  - Complete the initial project proposal document (Chapters 1 & 2).
-  - Create the first draft of our API documentation by listing the planned endpoints.
+  - Finalize project topic and objectives (aCHORDingly Web Service).
+  - Define the problem statement — lack of an open resource API for chord diagram generation.
+  - Outline data models for key entities.
+  - Complete Chapters 1 & 2 of the ITCC14 Final Project Document (Introduction and Web Service Architecture).
+  - Draft initial REST API plan (e.g., /chords, /analytics, /lyrics).
 - **Deliverables:**
-  - An updated `README.md` file with a "Problem Statement" and "Data Models" section.
-  - A completed `ITCC14 Final Project Doc` (Chapters 1 & 2).
-  - An initial `api.yaml` file (or Postman collection) that lists all planned endpoints (e.g., `/users`, `/items`).
+  - Updated README.md containing:
+  - Overview of the Project
+  - Statement of the Problem
+  - Objectives
+  - Scope and Limitations
+  - Completed ITCC14 Final Project Document (Chapters 1 and 2).
+  - Initial api.yaml (or Postman collection) listing core planned endpoints.
 - **Checklist:**
   - [ ] Hold team meeting to finalize topic
-  - [ ] Write "Problem Statement" in `README.md`
-  - [ ] Define fields for "User" and "Item" models
-  - [ ] Write "Data Models" section in `README.md`
-  - [ ] Complete Chapter 1 of `ITCC14 Doc`
-  - [ ] Complete Chapter 2 of `ITCC14 Doc`
-  - [ ] Create `api.yaml` and add endpoints
+  - [ ] Define fields for Chord, Instrument, and User models
+  - [ ] Complete Chapters 1 and 2 of ITCC14 document
+  - [ ] Create initial api.yaml and add endpoints (/chords, /analytics, /lyrics)
   - [ ] Commit and push all files to GitHub
 
 ### Milestone 2 (Nov Week 2): Half API + Half Documentation + Git/GitHub
 
 - **What we'll do:**
-  - Initialize repo, set up virtualenv, install Flask/SQLite (or chosen stack).
-  - Build core endpoints (create/list) for 1–2 resources.
-  - Read out OpenAPI docs with request/response schemas and examples and start to create initial documentation on SwaggerUI.
-  - Use Git properly (feature branches, meaningful commits) and push to GitHub.
+  - Initialize repository and environment.
+  - Implement core endpoints for the Chord resource.
+  - Document REST API architecture and test using Postman.
+  - Add OpenAPI documentation with request and response schemas and example chord responses.
+  - Begin Chapter 3 (REST API Specifications) of ITCC14 document.
 - **Deliverables:**
-  - Running local server with at least create/list working.
-  - Updated `api_documentation.yaml` with examples and parameters.
-  - GitHub repo link (README points to it).
-  - Continue the chapter 3 of `ITCC14 Final Project Doc`
+  - Running backend with basic /chords endpoints working.
+  - Updated api_documentation.yaml with examples.
+  - Updated GitHub repository (with README linking to documentation).
+  - Draft version of Chapter 3 for ITCC14 document.
 - **Checklist:**
-  - [ ] Chapter 3 Of the Project document
-  - [ ] Repo created + initial commit
-  - [ ] Env + dependencies installed
-  - [ ] Create/list endpoints work
-  - [ ] Updated SwaggerUI documentation with examples
-  - [ ] GitHub pushed
+  - [ ] Repo created and initial commit
+  - [ ] Dependencies installed 
+  - [ ] Core /chords endpoints created
+  - [ ] API documentation started 
+  - [ ] Chapter 3 of ITCC14 document started
+  - [ ] Changes committed and pushed
 
 ### Milestone 3 (Nov Week 3): Full Backend API
 
 - **What you’ll do:**
-  - Complete remaining CRUD and special actions (e.g., claim item).
-  - Add validation and error responses (400/404) consistently.
-  - Seed script with sample data for demos.
-  - Update OpenAPI to match actual responses and edge cases.
+  - Implement remaining endpoints (/analytics, /lyrics, etc.).
+  - Add validation, error handling (400, 404), and response consistency.
+  - Seed the database with sample chord data.
+  - Validate OpenAPI schema to ensure completeness.
 - **Deliverables:**
-  - All planned endpoints implemented and tested locally.
-  - Seed script and instructions in README.
-  - OpenAPI spec validated in Swagger Editor (no schema errors).
+  - All planned endpoints working and tested.
+  - Seed script with sample chords (for example, C major, A minor).
+  - Validated OpenAPI specification (no schema errors).
+  - Updated project documentation and screenshots of working API.
 - **Checklist:**
-  - [ ] All endpoints done
-  - [ ] Validation + errors consistent
-  - [ ] Seed data added
-  - [ ] OpenAPI validated
+  - [ ] All endpoints implemented (/chords, /analytics, /lyrics)
+  - [ ] Input validation and error handling
+  - [ ] Seed data included
+  - [ ] OpenAPI validated and error-free
 
 ### Milestone 4 (Nov Week 4): Frontend Integration
 
 - **What you’ll do:**
-  - Build a simple UI (Plain JS or React) to call your API (list/create/claim).
-  - Handle loading and error states on the frontend.
-  - If presenting remotely, prepare ngrok for HTTPS URL (optional).
+  - Frontend will be utilized using Postman or Swagger.
+  - Integrate API endpoints for listing and viewing chord diagrams.
+  - Handle loading and error states.
+  - Prepare deployment option.
 - **Deliverables:**
-  - Frontend that demonstrates key API flows.
-  - Instructions in README on how to run frontend + connect to API.
+  - Frontend that connects to backend API (displays chord diagrams dynamically).
+  - Updated README.md with setup instructions.
+  - Demo-ready local environment.
 - **Checklist:**
-  - [ ] Frontend lists data
-  - [ ] Frontend creates data
-  - [ ] Frontend handles errors/loading
-  - [ ] Run steps documented
-
-### Milestone 5 (Optional, Dec Week 1): Containerization (Docker) for Easy Setup
-
-- **Why:** Make your app run the same on any machine.
-- **What you’ll do:**
-  - Write a `Dockerfile` for the backend.
-  - Use a volume for SQLite file if you want to keep data.
-  - Add `docker run` commands to README.
-- **Deliverables:**
-  - Buildable image and instructions to run.
-- **Checklist:**
-  - [ ] Dockerfile builds
-  - [ ] App runs in container
-  - [ ] README has Docker steps
+  - [ ] Frontend lists chords correctly
+  - [ ] Frontend fetches diagrams via API
+  - [ ] Handles errors and loading states
+  - [ ] Documentation updated for demo
 
 ### Final (Dec Week 2): Full Demo & Presentation
 
 - **What you’ll do:**
-  - Present problem, solution, and a live walkthrough of API + frontend.
-  - Show OpenAPI docs and how they match the implementation.
-  - Share repository link and quickstart steps.
+  - Present project: aCHORDingly Web Service using REST.
+  - Demonstrate working endpoints, frontend integration, and API documentation.
+  - Show OpenAPI docs and discuss how it aligns with implementation.
 - **Deliverables:**
-  - Slide or short doc with key points.
-  - Live demo script (steps you’ll follow during presentation).
+  - Presentation slides summarizing:
+  - Problem, Objectives, and Architecture
+  - Demo workflow
+  - Repository link with full documentation.
 - **Checklist:**
-  - [ ] Slides ready
+  - [ ] Slides finalized
   - [ ] Demo data seeded
   - [ ] Backup plan (screenshots/videos) prepared
