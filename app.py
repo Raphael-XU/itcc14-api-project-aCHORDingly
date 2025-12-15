@@ -62,9 +62,56 @@ def get_all_chords():
     except Exception as e:
         return jsonify({"error": f"Error fetching chords: {str(e)}"}), 500
 
+# Get chords by instrument
+@app.route('/chords/<instrument>', methods=['GET'])
+def get_chords_by_instrument(instrument):
+    try:
+        chords = list(chords_db.find({"instrument": instrument}, {"_id": 0}))
+        if chords:
+            return jsonify(chords), 200
+        return jsonify({"error": "No chords found for this instrument"}), 404
+    except Exception as e:
+        return jsonify({"error": f"Error fetching chords: {str(e)}"}), 500
 
+# Add new chord
+@app.route('/chords', methods=['POST'])
+def add_chord():
+    data = request.get_json()
 
-if __name__ == '__main__':
-    app.run(debug=True)
+    if not data or "chord" not in data or "instrument" not in data:
+        return jsonify({
+            "error": "Provide a chord and instrument",
+            "example": {
+                "chord": "E minor",
+                "instrument": "guitar",
+                "tuning": "standard",
+                "variants": ["minor"],
+                "png": "https://placeholder.com/chord.png"
+            }
+        }), 400
 
-    
+    # Add PNG placeholder if user did NOT provide one
+    if "png" not in data:
+        data["png"] = "https://placeholder.com/chord_diagram.png"
+
+    result = chords_db.insert_one(data)
+    if result.inserted_id:
+        return jsonify({"message": "Chord added successfully!"}), 201
+    else:
+        return jsonify({"error": "Error adding chord"}), 500
+
+@app.route('/chords/<chord_name>/variants', methods=['GET'])    
+def get_chord_variants(chord_name):
+    params = {
+        "chord": chord_name.lower(),
+        "instrument": request.args.get('instrument', 'guitar').lower(),
+        "tuning": request.args.get('tuning', 'standard').lower()
+    }
+    chord_info = chords_db.find_one(params, {"_id": 0, "variants": 1})
+
+    if not chord_info:
+        return jsonify({"error": "No variants found for the given parameters"}), 404
+
+    log_usage(params["chord"], params["instrument"])
+
+    return jsonify({"chord": params["chord"], **params, "variants": chord_info["variants"]}), 200
